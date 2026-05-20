@@ -2,4 +2,4 @@
 icon: lucide/rocket
 ---
 
-# Keepint track of some stuff
+# Keeping track of some stuff

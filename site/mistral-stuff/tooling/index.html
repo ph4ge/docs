@@ -390,6 +390,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#installing-mistral-vibe-locally-multiple-instancesversions-of-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Installing Mistral Vibe locally (multiple instances/versions of it)
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -479,6 +490,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#installing-mistral-vibe-locally-multiple-instancesversions-of-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Installing Mistral Vibe locally (multiple instances/versions of it)
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -507,7 +529,7 @@
       <a href="../.." class="md-path__link">
         
   <span class="md-ellipsis">
-    Keepint track of some stuff
+    Keeping track of some stuff
   </span>
 
       </a>
@@ -547,7 +569,7 @@
 <div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>uv tool install --from git+https://github.com/ph4ge/mistral-vibe mistral-vibe
 </span></code></pre></div>
 <h2 id="install-mistral-vibe-locally-from-git-repo">Install Mistral Vibe locally from <code>git</code> repo<a class="headerlink" href="#install-mistral-vibe-locally-from-git-repo" title="Permanent link">&para;</a></h2>
-<p>After cloning the <code>mistral-vibe</code> repository, you can run the tests using the following steps:</p>
+<p>After cloning the <a href="https://github.com/mistralai/mistral-vibe/"><code>mistral-vibe</code></a> repository, you can run the tests using the following steps:</p>
 <p>1) <strong>Navigate to the repository directory</strong>:</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">cd</span><span class="w"> </span>mistral-vibe
 </span></code></pre></div>
@@ -576,6 +598,41 @@
    <div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>uv<span class="w"> </span>run<span class="w"> </span>pytest<span class="w"> </span>-v
 </span></code></pre></div></p>
 <p>This will automatically create a virtual environment and run the tests.</p>
+<h2 id="installing-mistral-vibe-locally-multiple-instancesversions-of-it">Installing Mistral Vibe locally (multiple instances/versions of it)<a class="headerlink" href="#installing-mistral-vibe-locally-multiple-instancesversions-of-it" title="Permanent link">&para;</a></h2>
+<p>Sometimes, it's interesting to have multiple instances of Mistral Vibe installed. This is easily achieved using Python virtualenv e.g. through <code>uv</code>.</p>
+<p>The following is especially useful when one wants to use a fresh <code>config.toml</code> file. More specifically, an already installed instance of <code>vibe</code> could be located at:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>~/.local/bin/vibe
+</span></code></pre></div>
+<p>but actually pointing to:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>~/.local/share/uv/tools/mistral-vibe/bin/vibe
+</span></code></pre></div>
+<p>Now, installing another instance of <code>vibe</code> in another virtualenv would still pick up the <code>config.toml</code> file which is by default located:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>~/.vibe/config.toml<span class="w">   </span>
+</span></code></pre></div>
+<p>Depending on the use case, this can be useful and especially for re-using the locally stored API keys.</p>
+<p>However, if one wants to have a fresh <code>config.toml</code> file, we need an additional step. For demonstration purposes, we use the <code>/tmp/</code> directory:</p>
+<p>1) <strong>Create a directory:</strong></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>mkdir<span class="w"> </span>/tmp/vibe-test
+</span></code></pre></div>
+<p>2) <strong>Set and expose the <code>VIBE_HOME</code> variable to this directory</strong>:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">VIBE_HOME</span><span class="o">=</span>/tmp/vibe-test
+</span></code></pre></div>
+<p>3) <strong>Create and activate your virtualenv</strong> and install Mistral Vibe:</p>
+<p><div class="language-bash highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>uv<span class="w"> </span>venv<span class="w"> </span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>Using<span class="w"> </span>CPython<span class="w"> </span><span class="m">3</span>.14.2
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>Creating<span class="w"> </span>virtual<span class="w"> </span>environment<span class="w"> </span>at:<span class="w"> </span>.venv
+</span></code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="nb">source</span><span class="w"> </span>.venv/bin/activate
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>git+https://github.com/ph4ge/mistral-vibe<span class="w"> </span>mistral-vibe<span class="w"> </span><span class="c1"># using my fork</span>
+</span></code></pre></div>
+<code>vibe</code> will be installed:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="o">(</span>.venv<span class="o">)</span>/tmp/vibe-test$<span class="w"> </span>which<span class="w"> </span>vibe
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>/tmp/vibe-test/.venv/bin/vibe
+</span></code></pre></div></p>
+<p>4) <strong>Run Mistral Vibe:</strong></p>
+<p><div class="language-bash highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>vibe
+</span></code></pre></div>
+This will create a fresh <code>config.toml</code> file in <code>/tmp/vibe-test</code></p>
 
 
 
