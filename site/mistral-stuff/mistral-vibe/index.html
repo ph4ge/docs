@@ -339,9 +339,10 @@
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav" aria-label="Vibe CLI &#x2f;model command flow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#workflow-explanation" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
@@ -349,6 +350,72 @@
       </span>
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mistral-vibe-cli-switching-between-modelthinking-profiles" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Mistral Vibe CLI -- Switching between model/thinking profiles
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recap-modelthinking-switch-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Recap: Model/Thinking Switch Cases
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Recap: Model&#x2f;Thinking Switch Cases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-two-handlers" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        The Two Handlers
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-cases-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        8 Cases Matrix
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-coverage-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Test Coverage Summary
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -444,9 +511,10 @@
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav" aria-label="Vibe CLI &#x2f;model command flow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#workflow-explanation" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
@@ -454,6 +522,72 @@
       </span>
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mistral-vibe-cli-switching-between-modelthinking-profiles" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Mistral Vibe CLI -- Switching between model/thinking profiles
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recap-modelthinking-switch-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Recap: Model/Thinking Switch Cases
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Recap: Model&#x2f;Thinking Switch Cases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-two-handlers" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        The Two Handlers
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-cases-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        8 Cases Matrix
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-coverage-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Test Coverage Summary
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -485,7 +619,7 @@
       <a href="../.." class="md-path__link">
         
   <span class="md-ellipsis">
-    Keepint track of some stuff
+    Keeping track of some stuff
   </span>
 
       </a>
@@ -557,7 +691,7 @@
     VibeCLI-&gt;&gt;VibeCLI: Show confirmation message
     VibeCLI-&gt;&gt;VibeCLI: Switch back to input app
     VibeCLI-&gt;&gt;VibeCLI: Show model switched message</code></pre>
-<h2 id="workflow-explanation">Workflow Explanation:<a class="headerlink" href="#workflow-explanation" title="Permanent link">&para;</a></h2>
+<h3 id="workflow-explanation">Workflow Explanation:<a class="headerlink" href="#workflow-explanation" title="Permanent link">&para;</a></h3>
 <ol>
 <li><strong>User Invokes Command</strong>:</li>
 <li>The user types <code>/model a_model</code> in the Vibe CLI interface</li>
@@ -608,6 +742,143 @@
 <li>A message confirming the model switch is displayed</li>
 </ol>
 <p>This workflow shows the complete process from when you type the <code>/model</code> command until the UI updates to reflect the new model selection. The actual model switching happens through the configuration system, which then triggers the necessary UI updates and agent loop reloads.</p>
+<h2 id="mistral-vibe-cli-switching-between-modelthinking-profiles">Mistral Vibe CLI -- Switching between model/thinking profiles<a class="headerlink" href="#mistral-vibe-cli-switching-between-modelthinking-profiles" title="Permanent link">&para;</a></h2>
+<pre class="mermaid"><code>stateDiagram-v2
+    direction LR
+
+    %% Nodes (4 states)
+    NR∅: Non-reasoning&lt;br&gt;No user messages
+    NR+: Non-reasoning&lt;br&gt;Has user messages
+    R∅: Reasoning&lt;br&gt;No user messages
+    R+: Reasoning&lt;br&gt;Has user messages
+
+    %% Transitions
+    R+ --&gt; NR∅ : switch to non-reasoning&lt;br&gt;🔴 Clears history
+    R∅ --&gt; NR∅ : switch to non-reasoning&lt;br&gt;✅ No clear
+    NR+ --&gt; R+ : switch to reasoning&lt;br&gt;✅ No clear
+    NR∅ --&gt; R∅ : switch to reasoning&lt;br&gt;✅ No clear
+    R+ --&gt; R+ : switch to reasoning&lt;br&gt;✅ No clear
+    R∅ --&gt; R∅ : switch to reasoning&lt;br&gt;✅ No clear
+    NR+ --&gt; NR+ : switch to non-reasoning&lt;br&gt;✅ No clear
+    NR∅ --&gt; NR∅ : switch to non-reasoning&lt;br&gt;✅ No clear
+
+    %% Edge cases you might have missed
+    note right of R+
+        ⚠️ Missed: switching FROM reasoning
+        with messages TO non-reasoning
+        is the ONLY case that clears.
+        All other transitions preserve history.
+    end note</code></pre>
+<h2 id="recap-modelthinking-switch-cases">Recap: Model/Thinking Switch Cases<a class="headerlink" href="#recap-modelthinking-switch-cases" title="Permanent link">&para;</a></h2>
+<h3 id="the-two-handlers">The Two Handlers<a class="headerlink" href="#the-two-handlers" title="Permanent link">&para;</a></h3>
+<p>Both use <strong>identical logic</strong> to clear history:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># on_model_picker_app_model_selected (lines 832-845)</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="k">if</span> <span class="p">(</span><span class="n">current_model</span><span class="o">.</span><span class="n">thinking</span> <span class="o">!=</span> <span class="s2">&quot;off&quot;</span> <span class="ow">and</span> <span class="n">new_model</span><span class="o">.</span><span class="n">thinking</span> <span class="o">==</span> <span class="s2">&quot;off&quot;</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">agent_loop</span><span class="o">.</span><span class="n">messages</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">):</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_clear_history</span><span class="p">()</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_mount_and_scroll</span><span class="p">(</span><span class="n">WarningMessage</span><span class="p">(</span><span class="s2">&quot;History cleared: selected model doesn&#39;t support reasoning&quot;</span><span class="p">))</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="c1"># on_thinking_picker_app_thinking_selected (lines 854-867)</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="k">if</span> <span class="p">(</span><span class="n">current_thinking</span> <span class="o">!=</span> <span class="s2">&quot;off&quot;</span> <span class="ow">and</span> <span class="n">new_thinking</span> <span class="o">==</span> <span class="s2">&quot;off&quot;</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">agent_loop</span><span class="o">.</span><span class="n">messages</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">):</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_clear_history</span><span class="p">()</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>    <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_mount_and_scroll</span><span class="p">(</span><span class="n">WarningMessage</span><span class="p">(</span><span class="s2">&quot;History cleared: reasoning disabled&quot;</span><span class="p">))</span>
+</span></code></pre></div>
+<p><strong>Key</strong>: Both only clear history on <strong>R+ → NR∅</strong> (Reasoning+messages → Non-reasoning). All other 7 cases preserve history by default.</p>
+<hr />
+<h3 id="8-cases-matrix">8 Cases Matrix<a class="headerlink" href="#8-cases-matrix" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Transition</th>
+<th>on_model_picker</th>
+<th>on_thinking_picker</th>
+<th>Test</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><strong>R+ → NR∅</strong></td>
+<td>✅ Clears</td>
+<td>✅ Clears</td>
+<td><code>test_switch_from_reasoning_to_non_reasoning_clears_history</code> + warning test</td>
+</tr>
+<tr>
+<td>2</td>
+<td>R∅ → NR∅</td>
+<td>❌ No clear (len ≤ 1)</td>
+<td>❌ No clear (len ≤ 1)</td>
+<td><code>test_switch_from_reasoning_to_non_reasoning_with_no_history_does_not_clear</code></td>
+</tr>
+<tr>
+<td>3</td>
+<td>NR+ → R+</td>
+<td>❌ No clear (not downgrade)</td>
+<td>N/A (picker only downgrades)</td>
+<td><code>test_switch_from_non_reasoning_to_reasoning_does_not_clear</code></td>
+</tr>
+<tr>
+<td>4</td>
+<td>NR∅ → R∅</td>
+<td>❌ No clear (not downgrade)</td>
+<td>N/A</td>
+<td><code>test_switch_from_non_reasoning_to_reasoning_with_no_history_does_not_clear</code></td>
+</tr>
+<tr>
+<td>5</td>
+<td>R+ → R+</td>
+<td>❌ No clear (not downgrade)</td>
+<td>❌ No clear (not downgrade)</td>
+<td><code>test_switch_between_reasoning_models_does_not_clear</code></td>
+</tr>
+<tr>
+<td>6</td>
+<td>R∅ → R∅</td>
+<td>❌ No clear (not downgrade)</td>
+<td>❌ No clear (not downgrade)</td>
+<td><code>test_switch_between_reasoning_models_with_no_history_does_not_clear</code></td>
+</tr>
+<tr>
+<td>7</td>
+<td>NR+ → NR+</td>
+<td>❌ No clear (not downgrade)</td>
+<td>N/A</td>
+<td><code>test_switch_between_non_reasoning_models_does_not_clear</code></td>
+</tr>
+<tr>
+<td>8</td>
+<td>NR∅ → NR∅</td>
+<td>❌ No clear (not downgrade)</td>
+<td>N/A</td>
+<td><code>test_switch_between_non_reasoning_models_with_no_history_does_not_clear</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Legend</strong>: R = Reasoning, NR = Non-reasoning, + = has messages, ∅ = only system message</p>
+<hr />
+<h3 id="test-coverage-summary">Test Coverage Summary<a class="headerlink" href="#test-coverage-summary" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Handler</th>
+<th>Tests</th>
+<th>Coverage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>on_model_picker_app_model_selected</code></td>
+<td>9 tests</td>
+<td><strong>All 8 cases covered</strong></td>
+</tr>
+<tr>
+<td><code>on_thinking_picker_app_thinking_selected</code></td>
+<td>9 tests</td>
+<td><strong>All 8 cases covered</strong> (via same logic)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Note</strong>: The thinking picker only handles downgrades (R → NR). Upgrades (NR → R) are implicit and correctly preserve history.</p>
 
 
 
