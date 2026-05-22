@@ -108,17 +108,26 @@ export VIBE_HOME=/tmp/vibe-test
 3) **Create and activate your virtualenv** and install Mistral Vibe:
 
 ```bash
+cd vibe-test/
+```
+```bash
 uv venv 
 Using CPython 3.14.2
 Creating virtual environment at: .venv
 ```
 ```bash
 source .venv/bin/activate
+```
+In:
+```bash
+(vibe-test)host@system:/tmp/vibe-test/$ 
+```
+```bash
 uv pip install git+https://github.com/ph4ge/mistral-vibe mistral-vibe # using my fork
 ```
 `vibe` will be installed:
 ```bash
-(.venv)/tmp/vibe-test$ which vibe
+(vibe-test)host@system:/tmp/vibe-test/$ which vibe
 /tmp/vibe-test/.venv/bin/vibe
 ```
 

@@ -612,25 +612,31 @@
 <p>Depending on the use case, this can be useful and especially for re-using the locally stored API keys.</p>
 <p>However, if one wants to have a fresh <code>config.toml</code> file, we need an additional step. For demonstration purposes, we use the <code>/tmp/</code> directory:</p>
 <p>1) <strong>Create a directory:</strong></p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>mkdir<span class="w"> </span>/tmp/vibe-test
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>mkdir<span class="w"> </span>-p<span class="w"> </span>/tmp/vibe-test
 </span></code></pre></div>
 <p>2) <strong>Set and expose the <code>VIBE_HOME</code> variable to this directory</strong>:</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">VIBE_HOME</span><span class="o">=</span>/tmp/vibe-test
 </span></code></pre></div>
 <p>3) <strong>Create and activate your virtualenv</strong> and install Mistral Vibe:</p>
-<p><div class="language-bash highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>uv<span class="w"> </span>venv<span class="w"> </span>
-</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>Using<span class="w"> </span>CPython<span class="w"> </span><span class="m">3</span>.14.2
-</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>Creating<span class="w"> </span>virtual<span class="w"> </span>environment<span class="w"> </span>at:<span class="w"> </span>.venv
+<p><div class="language-bash highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="nb">cd</span><span class="w"> </span>vibe-test/
 </span></code></pre></div>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="nb">source</span><span class="w"> </span>.venv/bin/activate
-</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>git+https://github.com/ph4ge/mistral-vibe<span class="w"> </span>mistral-vibe<span class="w"> </span><span class="c1"># using my fork</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>uv<span class="w"> </span>venv<span class="w"> </span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>Using<span class="w"> </span>CPython<span class="w"> </span><span class="m">3</span>.14.2
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>Creating<span class="w"> </span>virtual<span class="w"> </span>environment<span class="w"> </span>at:<span class="w"> </span>.venv
+</span></code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="nb">source</span><span class="w"> </span>.venv/bin/activate
+</span></code></pre></div>
+In:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="o">(</span>vibe-test<span class="o">)</span>host@system:/tmp/vibe-test/$<span class="w"> </span>
+</span></code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>git+https://github.com/ph4ge/mistral-vibe<span class="w"> </span>mistral-vibe<span class="w"> </span><span class="c1"># using my fork</span>
 </span></code></pre></div>
 <code>vibe</code> will be installed:
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="o">(</span>.venv<span class="o">)</span>/tmp/vibe-test$<span class="w"> </span>which<span class="w"> </span>vibe
-</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>/tmp/vibe-test/.venv/bin/vibe
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="o">(</span>vibe-test<span class="o">)</span>host@system:/tmp/vibe-test/$<span class="w"> </span>which<span class="w"> </span>vibe
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>/tmp/vibe-test/.venv/bin/vibe
 </span></code></pre></div></p>
 <p>4) <strong>Run Mistral Vibe:</strong></p>
-<p><div class="language-bash highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>vibe
+<p><div class="language-bash highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>vibe
 </span></code></pre></div>
 This will create a fresh <code>config.toml</code> file in <code>/tmp/vibe-test</code></p>
 
