@@ -96,7 +96,7 @@ However, if one wants to have a fresh `config.toml` file, we need an additional 
 1) **Create a directory:**
 
 ```bash
-mkdir /tmp/vibe-test
+mkdir -p /tmp/vibe-test
 ```
 
 2) **Set and expose the `VIBE_HOME` variable to this directory**:
