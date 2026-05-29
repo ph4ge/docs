@@ -2,8 +2,14 @@
 
 ## Install Mistral Vibe locally from `git` repo using `uv`
 
-```
+```bash
 uv tool install --from git+https://github.com/ph4ge/mistral-vibe mistral-vibe
+```
+
+### Update the install
+
+```bash
+uv tool install --from "git+https://github.com/ph4ge/mistral-vibe.git" --force mistral-vibe
 ```
 
 ## Install Mistral Vibe locally from `git` repo
